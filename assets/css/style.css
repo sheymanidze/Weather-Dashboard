@@ -10,15 +10,25 @@ header, .five-day {
  font-size: 50px;
 }
 
-.input-group {
+.input-group, .btn-secondary  {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+.input-group {
   width: 70%;
 }
 
 .list-group {
-  margin-left: 20px;;
+  margin-left: 20px;
+  visibility: hidden;
 }
+
+.btn-secondary {
+  visibility: hidden;
+}
+
+
 .jumbotron {
   margin-top: 20px;
 }
