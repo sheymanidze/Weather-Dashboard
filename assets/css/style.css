@@ -2,10 +2,43 @@
   margin:0;
   padding:0; 
 }
-header {
+header, .five-day {
   font-family: 'Blinker', sans-serif;
 }
 
 .navbar-text {
  font-size: 50px;
 }
+
+.input-group {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 70%;
+}
+
+.list-group {
+  margin-left: 20px;;
+}
+.jumbotron {
+  margin-top: 20px;
+}
+
+.five-day {
+ font-size: 30px;
+ margin-bottom: 35px;
+}
+
+.card-body {
+  padding: 0.25rem;
+}
+
+.card-deck {
+  padding: 0;
+  margin: 0;
+}
+
+/* @media (min-width: 878px) { 
+  .card-deck {
+    flex-direction: column;
+  }
+} */
