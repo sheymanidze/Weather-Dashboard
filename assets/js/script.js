@@ -37,3 +37,26 @@ clearAll.click(function () {
   localStorage.clear();
   location.reload(true);
 });
+
+//API key
+var key = "a51312ec772d50f8e3864848a74cedc0";
+console.log(key);
+
+var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=&appid={a51312ec772d50f8e3864848a74cedc0}";
+
+console.log(weatherUrl);
+
+function showWeather(event) {
+  event.preventDefault();
+}
+
+fetch('https://api.openweathermap.org/data/2.5/weather?q=&appid={a51312ec772d50f8e3864848a74cedc0}', {
+  method: 'GET',
+  url: weatherUrl
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  })
