@@ -28,6 +28,10 @@ header, .five-day {
   visibility: hidden;
 }
 
+.list-group {
+  cursor: pointer;
+}
+
 
 .jumbotron {
   margin-top: 20px;
@@ -40,6 +44,10 @@ header, .five-day {
 
 .card-body {
   padding: 0.25rem;
+}
+
+.card-text {
+  margin-bottom: 10px;
 }
 
 .card-deck {
