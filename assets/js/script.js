@@ -93,15 +93,20 @@ function currentWeather(weatherUrl) {
       console.log(data.main.temp);
       console.log(data.wind.speed);
 
+
+      //Api for icon
       var weatherIcon = data.weather[0].icon;
       var iconUrl = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
       console.log(weatherIcon);
       console.log(iconUrl);
 
+
       $('#cityName').text(data.name + " <img src=" + iconUrl + ">");
       // console.log(cityName);
 
-      $('#temperature').text('Temperature: ' + data.main.temp);
+      var temp = (data.main.temp - 273.15);
+      console.log(temp)
+      $('#temperature').text('Temperature: ' + temp.toFixed(0) + ' °C');
       console.log(temperature);
 
       $('#humidity').text('Humidity: ' + data.main.humidity + "%");
