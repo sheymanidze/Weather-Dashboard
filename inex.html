@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/resset.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Weather Dashboard</title>
 </head>
@@ -41,8 +40,13 @@
     <div class="col-8">
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4"></h1>
-          <p class="lead"></p>
+          <h1 class="display-4" id="cityName"></h1>
+          <h2 class="date" id="date"></h2>
+          <img />
+          <h3 class="lead" id="temperature"></h3>
+          <h3 id="humidity"></h3>
+          <h3 id="windSpeed"></h3>
+          <h3 id="uvIndex"></h3>
         </div>
       </div>
       <h1 class="five-day">5-Day Forecast:</h1>
