@@ -2,7 +2,8 @@
   margin:0;
   padding:0; 
 }
-header, .five-day {
+
+header, .five-day, .display-4, .lead, .card {
   font-family: 'Blinker', sans-serif;
 }
 

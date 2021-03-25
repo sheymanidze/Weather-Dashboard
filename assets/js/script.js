@@ -4,8 +4,7 @@ var clearAll = $('#clearAll');
 var inputCity = $('#city-Input');
 var place = "";
 var cityName = $('#cityName');
-var currentDate = $('#date');
-var temperature = $('#temperature');
+
 
 
 
@@ -41,12 +40,6 @@ searchBtn.click(function () {
     // console.log(currentWeather)
     // console.log("Hello")
   })
-
-  var currentDate = moment().format('L');
-  $('#data').text(currentDate)
-
-
-
 
   //clear input
   $('input[id="city-Input"]').val('');
@@ -94,6 +87,10 @@ function currentWeather(weatherUrl) {
       console.log(data.wind.speed);
 
 
+      var currentDate = moment().format('L');
+      console.log(currentDate)
+
+
       //Api for icon
       var weatherIcon = data.weather[0].icon;
       var iconUrl = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
@@ -101,25 +98,49 @@ function currentWeather(weatherUrl) {
       console.log(iconUrl);
 
 
-      $('#cityName').text(data.name + " <img src=" + iconUrl + ">");
+      $('#cityName').text(data.name + " " + "(" + currentDate + ")" + " <img src=" + iconUrl + ">");
       // console.log(cityName);
 
       var temp = (data.main.temp - 273.15);
-      console.log(temp)
+      console.log(temp);
       $('#temperature').text('Temperature: ' + temp.toFixed(0) + ' °C');
       console.log(temperature);
 
       $('#humidity').text('Humidity: ' + data.main.humidity + "%");
       console.log(humidity);
 
-      $('#windSpeed').text('Wind Speed: ' + data.wind.speed + ' MPH');
+      $('#windSpeed').text('Wind Speed: ' + data.wind.speed.toFixed(1) + ' MPH');
+      console.log(windSpeed);
+
+      var key = "a51312ec772d50f8e3864848a74cedc0";
+      var lat = data.coord.lat;
+      var lon = data.coord.lon;
+      console.log(lat);
+      console.log(lon);
 
 
-    })
-  console.log(currentWeather);
+      //get UV Index
+      var uvIndexUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + key;
+      console.log(uvIndexUrl);
+
+      fetch(uvIndexUrl, {
+      });
+        .then(function (response) {
+        return response.json();
+      });
+        .then(function (data) {
+        console.log(data.value);
+
+        $('#uvIndex').text('UV Index: ' + data.value);
+        console.log(uvIndex)
+      });
 
 
-}
+
+    });
+
+
+};
 
 
 
