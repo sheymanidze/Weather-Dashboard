@@ -22,6 +22,7 @@ searchBtn.click(function () {
 
   $('.five-day').show();
   $('#fiveDays').show();
+  $('.lead').show();
 
   //get name and its value
   var cities = $('input[id="city-Input"]').val();
@@ -74,8 +75,6 @@ function currentWeather(weatherUrl) {
     })
     .then(function (data) {
 
-
-
       var currentDate = moment().format('L');
 
       //Api for icon
@@ -116,7 +115,7 @@ function currentWeather(weatherUrl) {
 
           var coloredIndex = data.value
 
-          $('#uvIndex').text('UV Index:  ' + coloredIndex);
+          $('#uvIndex').text('  ' + coloredIndex);
 
 
           if (data.value <= 2) {
@@ -149,7 +148,6 @@ function weatherForecast(cities) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       for (i = 0; i < 5; i++) {
         var date = new Date((data.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
         var forecastIcon = data.list[((i + 1) * 8) - 1].weather[0].icon;

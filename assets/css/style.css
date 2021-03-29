@@ -41,6 +41,7 @@ header, .five-day, .display-4, .lead, .card {
 
 .lead {
   margin-bottom: 20px;
+  display:none;
 
 }
 
@@ -66,9 +67,3 @@ header, .five-day, .display-4, .lead, .card {
   padding: 0;
   margin: 0;
 }
-
-/* @media (min-width: 878px) { 
-  .card-deck {
-    flex-direction: column;
-  }
-} */
