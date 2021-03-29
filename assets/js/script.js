@@ -20,6 +20,9 @@ $('#places').on('click', '.list-group-item', function () {
 
 searchBtn.click(function () {
 
+  $('.five-day').show();
+  $('#fiveDays').show();
+
   //get name and its value
   var cities = $('input[id="city-Input"]').val();
 
@@ -156,8 +159,8 @@ function weatherForecast(cities) {
 
         $('#fDate' + i).text(date);
         $('#forecastIcon' + i).html('<img src=' + iconUrl + '>');
-        $('#temp' + i).text(temp + ' °C');
-        $('#hum' + i).text(hum + ' %');
+        $('#temp' + i).text(' ' + temp + ' °C');
+        $('#hum' + i).text(' ' + hum + ' %');
 
       }
     })

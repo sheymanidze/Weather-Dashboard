@@ -47,7 +47,12 @@ header, .five-day, .display-4, .lead, .card {
 .five-day {
  font-size: 30px;
  margin-bottom: 35px;
+ display: none;
 }
+
+#fiveDays {
+  display: none;
+} 
 
 .card-body {
   padding: 0.25rem;
