@@ -4,6 +4,24 @@ var clearAll = $('#clearAll');
 var inputCity = $('#city-Input');
 var cityName = $('#cityName');
 var key = "a51312ec772d50f8e3864848a74cedc0"
+var myCities = [];
+
+function getCities() {
+  var storage = localStorage.getItem('places')
+  if (storage) {
+    myCities = JSON.parse(storage)
+    myCities.forEach(city => { printCities(city) })
+  }
+}
+
+getCities();
+
+function printCities(city) {
+  placesEl.append('<li>' + city + '</li>');
+  $(placesEl).children().attr("class", "list-group-item")
+  $('.list-group').css('visibility', 'visible');
+  $('.btn-secondary').css('visibility', 'visible');
+}
 
 
 $('#places').on('click', '.list-group-item', function () {
@@ -29,28 +47,28 @@ searchBtn.click(function () {
 
   //refactor url
   var weatherUrl = generateURL(cities);
-  currentWeather(weatherUrl)
+  currentWeather(weatherUrl);
 
   weatherForecast(cities);
 
   //if empty
   if (!cities) {
-    console.log("No cities chosen")
     return;
   }
 
   //print
-  placesEl.append('<li>' + cities + '</li>');
-  $(placesEl).children().attr("class", "list-group-item")
-  $('.list-group').css('visibility', 'visible');
-  $('.btn-secondary').css('visibility', 'visible');
+
+  printCities(cities);
 
   //clear input
-  $('input[id="city-Input"]').val('');
+  $('#city-Input').val('');
+
+
+  myCities.push(cities);
+
 
   //save at local storage
-  localStorage.setItem('places', cities);
-  //localStorage.getItem('places', cities);
+  localStorage.setItem('places', JSON.stringify(myCities));
 
 });
 
@@ -127,7 +145,7 @@ function currentWeather(weatherUrl) {
           } else if (data.value <= 10) {
             $('#uvIndex').css('background-color', 'red')
           } else {
-            $('#uvIndex').css('background - color', 'purple')
+            $('#uvIndex').css('background-color', 'purple')
           }
 
         });
