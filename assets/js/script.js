@@ -27,11 +27,13 @@ function printCities(city) {
 $('#places').on('click', '.list-group-item', function () {
   let clickedCity = ''
   clickedCity = $(this).html();
-  console.log(clickedCity)
   var weatherUrl = generateURL(clickedCity);
   currentWeather(weatherUrl);
 
   weatherForecast(clickedCity);
+  $('.five-day').show();
+  $('#fiveDays').show();
+  $('.lead').show();
 
 })
 
@@ -67,7 +69,6 @@ searchBtn.click(function () {
   myCities.push(cities);
 
 
-  //save at local storage
   localStorage.setItem('places', JSON.stringify(myCities));
 
 });
