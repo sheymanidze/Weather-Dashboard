@@ -6,7 +6,6 @@
 * Specifics
 * Screenhots
 * Deployment of application
-* Comments
 
 ## General info
 
@@ -67,6 +66,4 @@
 
 To run a project, please follow the link [https://sheymanidze.github.io/Weather-Dashboard/](https://sheymanidze.github.io/Weather-Dashboard/)
 
-
-## Comments
 
